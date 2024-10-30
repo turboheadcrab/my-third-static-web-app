@@ -3,7 +3,7 @@
   "configurations": {
     "my-third-static-web-app": {
       "appLocation": ".",
-      "outputLocation": "dist/my-third-static-web-app/browser",
+      "outputLocation": "dist/my-third-static-web-app",
       "appBuildCommand": "npm run build",
       "run": "npm start",
       "appDevserverUrl": "http://localhost:4200"
