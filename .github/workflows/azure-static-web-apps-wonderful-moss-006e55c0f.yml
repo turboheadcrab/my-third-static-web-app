@@ -15,10 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           submodules: true
           lfs: false
+      - name: Inject secrets into environment.ts
+        run: |
+          sed -i "s|defaultTestActionSecret|${{ secrets.TEST_ACTION_SECRET }}|g" ./src/environments/environment.ts
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
