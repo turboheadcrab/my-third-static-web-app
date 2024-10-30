@@ -8,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -31,5 +32,7 @@ export class AppComponent {
     } else {
       this.configuration.set('production');
     }
+    const testActionSecret = environment.testActionSecret;
+    console.info('testActionSecret: ', testActionSecret);
   }
 }
