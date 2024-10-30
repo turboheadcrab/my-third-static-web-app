@@ -1,4 +1,22 @@
-<p>Configuration mode: {{ configuration() }}</p>
-<p>Count: {{ count() }}</p>
-<button (click)="modifyByOne(true)">+</button>
-<button (click)="modifyByOne(false)">-</button>
+<app-navbar />
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Configuration</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Current mode: {{ configuration() }}</p>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Dynamic content</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Count: {{ count() }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="modifyByOne(true)">Add one</button>
+    <button mat-button (click)="modifyByOne(false)">Subtract one</button>
+  </mat-card-actions>
+</mat-card>
+<router-outlet />
