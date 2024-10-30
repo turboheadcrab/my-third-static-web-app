@@ -1,12 +1,21 @@
-import { Component, isDevMode, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  isDevMode,
+  signal,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent, MatCardModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   configuration = signal<'development' | 'production' | undefined>(undefined);
