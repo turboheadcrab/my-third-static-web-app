@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "prettier:write": "prettier . --write",
     "swa:start": "swa start dist/my-third-static-web-app/browser"
   },
   "private": true,
